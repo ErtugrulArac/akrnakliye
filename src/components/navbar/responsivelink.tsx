@@ -2,10 +2,12 @@
 
 import React from 'react'
 import { RiHome5Line } from "react-icons/ri";
-import { BsShopWindow } from "react-icons/bs";
-import { GiFly } from "react-icons/gi";
-import { MdBalcony } from "react-icons/md";
 import { SheetClose } from "@/components/ui/sheet"; // Buraya dikkat
+
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { FaAddressBook } from "react-icons/fa";
+import { FaBookReader } from "react-icons/fa";
+
 
 const Responsivelink = () => {
     return (
@@ -18,19 +20,19 @@ const Responsivelink = () => {
 
             <SheetClose asChild>
                 <a title='Asde yapı Pvc Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#pvc">
-                    <BsShopWindow size={30} /> Hakkımda
+                    <FaAddressBook size={30} /> Hakkımda
                 </a>
             </SheetClose>
 
             <SheetClose asChild>
                 <a title='Asde Yapı Sineklik Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#sineklik">
-                    <GiFly size={30} /> İletişim
+                    <FaPhoneSquareAlt size={30} /> İletişim
                 </a>
             </SheetClose>
 
             <SheetClose asChild>
                 <a title='Asde Yapı Cambalkon Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#cambalkon">
-                    <MdBalcony size={30} /> Bilgi
+                    <FaBookReader size={30} /> Bilgi
                 </a>
             </SheetClose>
         </div>
