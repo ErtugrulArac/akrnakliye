@@ -18,19 +18,19 @@ const Responsivelink = () => {
 
             <SheetClose asChild>
                 <a title='Asde yapı Pvc Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#pvc">
-                    <BsShopWindow size={30} /> Pvc Kapı Pencere
+                    <BsShopWindow size={30} /> Hakkımda
                 </a>
             </SheetClose>
 
             <SheetClose asChild>
                 <a title='Asde Yapı Sineklik Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#sineklik">
-                    <GiFly size={30} /> Sineklik
+                    <GiFly size={30} /> İletişim
                 </a>
             </SheetClose>
 
             <SheetClose asChild>
                 <a title='Asde Yapı Cambalkon Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#cambalkon">
-                    <MdBalcony size={30} /> Cambalkon
+                    <MdBalcony size={30} /> Bilgi
                 </a>
             </SheetClose>
         </div>

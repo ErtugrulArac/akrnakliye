@@ -29,7 +29,7 @@ const MovingServicesSection = () => {
         {/* SAĞ: Görsel */}
         <div className="md:w-1/2 flex justify-center">
           <img 
-            src="akarkamyonlar.png" 
+            src="akarkamyonlar.webp" 
             alt="AKR Nakliyat araçları" 
             className="w-full max-w-md"
           />

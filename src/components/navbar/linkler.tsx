@@ -36,19 +36,19 @@ export default function NavigationMenuDemo() {
                     </div>
 
                     <p className="text-xs leading-tight text-muted-foreground text-white flex text-center opacity-70  ">
-                      Anasayfa'ya dönerek Asde Yapı sistemlerimiz hakkında detaylı bilgi alabilirsiniz.
+                      Anasayfa'ya dönerek Akar Nakliye  hakkında detaylı bilgi alabilirsiniz.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="https://www.asdeyapi.com/#pvc" title="PVC Pencere&Kapı">
-                Tanınmış markaların pvc kapı pencere sistemlerimiz.
+              <ListItem href="./" title="Hakkımızda">
+                Taşımacılıkta güven, hız ve müşteri memnuniyetini ilke edinmiş köklü bir firmayız.
               </ListItem>
-              <ListItem href="https://www.asdeyapi.com/#cambalkon" rel="canonical" title="Cam Balkon">
-                Asde Yapı sektör cam balkon sistemlerimiz.
+              <ListItem href="./" rel="canonical" title="İletişim">
+                Taşınma sürecinizle ilgili her sorunuz için bize dilediğiniz zaman ulaşabilirsiniz.
               </ListItem>
-              <ListItem href="https://www.asdeyapi.com/#sineklik" title="Sineklik">
-              Asde Yapı pileli, menteşeli sineklik sistemlerimiz.
+              <ListItem href="./" title="Bilgi">
+             Hizmet süreçlerimiz, fiyatlandırma ve taşımacılık detayları 
               </ListItem>
             </ul>
           </NavigationMenuContent>

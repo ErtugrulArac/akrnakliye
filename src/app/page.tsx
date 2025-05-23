@@ -10,6 +10,7 @@ import Hizmet from "@/components/hizmettanıtım"
 import Referanslar from "@/components/referanslar"
 import Nedenakr from "@/components/nedenakr"
 import Sorular from "@/components/sorular"
+import Yan from "@/components/yanyana"
 
 
 export default function Home() {
@@ -24,8 +25,9 @@ export default function Home() {
       <Acıklama/>
       <Hizmet/>
       <Referanslar/>
-      <Nedenakr/>
       <Sorular/>
+      <Yan/>
+      <Nedenakr/>
     </div>
   );
 }

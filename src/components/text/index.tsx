@@ -5,21 +5,21 @@ const ServicesSection = () => {
   const services = [
     {
       icon: <FaMapMarkedAlt className="text-3xl text-blue-600 mb-4" />,
-      title: 'Track Every Shipment in Real Time',
+      title: 'Güvenli ve Hızlı Şehir İçi Taşımacılık',
       desc:
-        "Stay updated on your cargo’s exact location with instant tracking notifications. Stay updated on your cargo’s exact location with instant tracking notifications.",
+        "Akar Nakliyat olarak şehir içi taşımacılıkta dakik ve güvenli hizmet sunuyoruz. Profesyonel ekibimiz ve özel araç filomuzla eşyalarınız zamanında ve sorunsuz şekilde taşınır.",
     },
     {
       icon: <FaRobot className="text-3xl text-blue-600 mb-4" />,
-      title: 'Automate Route Optimization',
+      title: 'Uygun Fiyatlı Uzun Mesafe Taşımacılık',
       desc:
-        'Cut costs and time by letting our AI-driven system optimize delivery routes.',
+        "Uzun mesafelerde de taşımacılık ihtiyaçlarınızı karşılıyoruz. Eşyalarınız özenle paketlenir, güvenle yeni adresinize ulaştırılır. Kaliteyi uygun fiyatla sunuyoruz.",
     },
     {
       icon: <FaChartBar className="text-3xl text-blue-600 mb-4" />,
-      title: 'Detailed Analytics and Reporting',
+      title: 'Evden Eve Taşımacılıkta Uzmanlık',
       desc:
-        'Make data-driven decisions with comprehensive logistics reports at your fingertips.',
+        "Ev taşıma sürecinde planlı, dikkatli ve müşteri memnuniyeti odaklı çalışıyoruz. Eşyalarınızı en iyi şekilde koruyarak, hızlı ve sorunsuz bir taşınma deneyimi yaşatıyoruz.",
     },
   ];
 
@@ -27,12 +27,10 @@ const ServicesSection = () => {
     <section className="w-full px-4 py-16 bg-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Three main <span className="text-blue-600">services</span>
+          AKAR Nakliyat <span className="text-blue-600">Hizmetleri</span>
         </h2>
         <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
-          Our app gives you unparalleled visibility into your entire logistics network. Whether you’re
-          managing a single delivery or overseeing thousands, you can track the exact location of every
-          shipment in real time.
+          AKAR Nakliyat olarak, şehir içi ve şehirler arası taşımacılıkta güvenilir ve profesyonel çözümler sunuyoruz. Her aşamada müşteri memnuniyetini ön planda tutarak, eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

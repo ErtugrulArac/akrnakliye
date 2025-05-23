@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState, useRef } from "react";
 
@@ -19,17 +19,20 @@ const data = [
 
 export default function PercentageCircles() {
   const [progress, setProgress] = useState(data.map(() => 0));
-  const containerRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Observer to detect when the section is visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+          setProgress(data.map(() => 0)); // Reset when not visible
+        }
       },
-      { threshold: 0.4 } // %40 görününce başlasın
+      { threshold: 0.4 }
     );
 
     if (containerRef.current) {
@@ -43,34 +46,25 @@ export default function PercentageCircles() {
     };
   }, []);
 
-  // Start animation when visible and repeat every 6s
   useEffect(() => {
     if (!isVisible) return;
 
-    const startAnimation = () => {
-      let frame = 0;
-      const newProgress = [...data.map(() => 0)];
+    let frame = 0;
+    const newProgress = [...data.map(() => 0)];
 
-      const animation = setInterval(() => {
-        frame++;
-        const updated = newProgress.map((val, i) =>
-          frame <= data[i].percent ? frame : data[i].percent
-        );
-        setProgress(updated);
+    const animation = setInterval(() => {
+      frame++;
+      const updated = newProgress.map((val, i) =>
+        frame <= data[i].percent ? frame : data[i].percent
+      );
+      setProgress(updated);
 
-        if (frame >= Math.max(...data.map((d) => d.percent))) {
-          clearInterval(animation);
-        }
-      }, 20);
-    };
+      if (frame >= Math.max(...data.map((d) => d.percent))) {
+        clearInterval(animation);
+      }
+    }, 20);
 
-    // Başlat ve her 6 saniyede tekrar et
-    startAnimation();
-    intervalRef.current = setInterval(startAnimation, 6000);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
+    return () => clearInterval(animation);
   }, [isVisible]);
 
   return (

@@ -8,22 +8,21 @@ const FleetSafetyBox = () => {
         {/* METİN ALANI */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">
-            Your Fleet’s Safety, Our Top Priority
+            Eşyalarınız Güvende, AKR Nakliyat Yanınızda
           </h3>
           <p className="text-gray-700 text-sm md:text-base mb-6">
-            Regular safety checks and maintenance are part of our commitment to keeping your fleet in top condition.
-            Our app schedules and tracks inspections, ensuring that every vehicle meets stringent safety standards.
+            Her taşıma süreci bizim için bir sorumluluk demektir. AKR Nakliyat olarak tüm araçlarımızı düzenli olarak kontrol eder, personelimizi titizlikle seçer ve eşyalarınızı en güvenli şekilde taşırız. Size sadece taşınmanın keyfini yaşamak kalır.
           </p>
           <button className="bg-[#0066a1] hover:bg-[#005388] text-white font-medium text-sm md:text-base px-6 py-2.5 rounded transition">
-            Get a Free Quote
+            Ücretsiz Fiyat Teklifi Al
           </button>
         </div>
 
         {/* GÖRSEL ALANI */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img
-            src="truckk.png"
-            alt="Truck"
+            src="truckk.webp"
+            alt="Nakliye Aracı"
             className="w-[250px] md:w-[320px] h-auto object-contain"
           />
         </div>

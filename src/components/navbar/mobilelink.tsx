@@ -21,11 +21,11 @@ export default function SheetDemo() {
             </SheetTrigger>
             <SheetContent className="overflow-auto" side={"left"}>
                 <SheetHeader>
-                    <SheetTitle className="flex items-center justify-center"><img className="w-32 " src="asdekarebeyaz.webp" alt="Arlan Medya Siyah logo" /></SheetTitle>
+                    <SheetTitle className="flex items-center justify-center"><img className="w-32 " src="akrlogosiyah.webp" alt="Arlan Medya Siyah logo" /></SheetTitle>
                     <SheetDescription className=" text-center">
-                        Estetik, Dayanıklılık, Konfor
-                        <p className="font-bold">0544 782 4655</p>
-                        <p className="font-bold">0552 248 6977</p>
+                        Zamanında, Hasarsız, Memnuniyetle
+                        <p className="font-bold">0549 175 0025</p>
+                        
                     </SheetDescription>
                 </SheetHeader>
 

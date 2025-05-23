@@ -6,7 +6,7 @@ const LogisticsHero = () => {
       {/* Sağdaki görsel ve maske */}
       <div className="absolute right-0 top-0 h-full w-[60%] z-0">
         <img
-          src="nakiye.png"
+          src="main.webp"
           alt="Truck"
           className="h-full w-full object-cover"
           style={{
