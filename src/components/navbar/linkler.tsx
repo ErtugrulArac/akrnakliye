@@ -44,10 +44,10 @@ export default function NavigationMenuDemo() {
               <ListItem href="./hakkimizda" title="Hakkımızda">
                 Taşımacılıkta güven, hız ve müşteri memnuniyetini ilke edinmiş köklü bir firmayız.
               </ListItem>
-              <ListItem href="./" rel="canonical" title="İletişim">
+              <ListItem href="./iletisim" rel="canonical" title="İletişim">
                 Taşınma sürecinizle ilgili her sorunuz için bize dilediğiniz zaman ulaşabilirsiniz.
               </ListItem>
-              <ListItem href="./" title="Bilgi">
+              <ListItem href="/#sorular" title="Bilgi">
              Hizmet süreçlerimiz, fiyatlandırma ve taşımacılık detayları 
               </ListItem>
             </ul>
