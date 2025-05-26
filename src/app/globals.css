@@ -116,8 +116,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
+.img {
+   background-image: url('/main.webp');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}

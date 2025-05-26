@@ -41,7 +41,7 @@ export default function NavigationMenuDemo() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="./" title="Hakkımızda">
+              <ListItem href="./hakkimizda" title="Hakkımızda">
                 Taşımacılıkta güven, hız ve müşteri memnuniyetini ilke edinmiş köklü bir firmayız.
               </ListItem>
               <ListItem href="./" rel="canonical" title="İletişim">

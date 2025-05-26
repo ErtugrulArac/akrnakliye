@@ -8,10 +8,12 @@ import { FaPhoneSquareAlt } from "react-icons/fa";
 import { FaAddressBook } from "react-icons/fa";
 import { FaBookReader } from "react-icons/fa";
 
+import Link from 'next/link';
+
 
 const Responsivelink = () => {
     return (
-        <div className='gap-11 rounded-lg px-1 py-6 flex w-full flex-col justify-start'>
+        <div className='gap-11  rounded-lg px-1 py-6 flex w-full flex-col justify-start'>
             <SheetClose asChild>
                 <a title='Anasayfa qr menü' className='flex items-center gap-6 text-lg font-semibold' href="/">
                     <RiHome5Line size={30} /> Anasayfa
@@ -19,9 +21,9 @@ const Responsivelink = () => {
             </SheetClose>
 
             <SheetClose asChild>
-                <a title='Asde yapı Pvc Sistemleri' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#pvc">
-                    <FaAddressBook size={30} /> Hakkımda
-                </a>
+                <Link href="/hakkimizda" className="flex items-center gap-6 text-lg font-medium opacity-90">
+                    <FaAddressBook size={30} /> Hakkımızda
+                </Link>     
             </SheetClose>
 
             <SheetClose asChild>

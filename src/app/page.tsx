@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Navbar from "@/components/navbar"
+
 import Main from "@/components/main"
 import Text from "@/components/text"
 import Truck from "@/components/trucks"
@@ -16,7 +16,7 @@ import Yan from "@/components/yanyana"
 export default function Home() {
   return (
     <div >
-      <Navbar/>
+      
       <Main/>
       <Text/>
       <Truck/>
