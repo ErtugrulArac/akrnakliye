@@ -4,9 +4,11 @@ import Link from 'next/link';
 
 const images = [
   '/main.gif',
+  '/akrmain2.webp',
   '/main1.webp',
   '/main2.webp',
   '/main3.webp',
+  '/akrmain1.webp',
   '/lokasyon.gif',
 ];
 
