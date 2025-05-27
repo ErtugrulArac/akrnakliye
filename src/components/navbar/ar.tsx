@@ -25,7 +25,7 @@ export default function HoverCardDemo() {
             <AvatarFallback>AR</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
-            <h4 className="text-sm font-semibold">@akrnakliye</h4>
+            <h4 className="text-sm font-semibold">@akrticaret</h4>
             <p className="text-sm">
             Copyright© all rights reserved <br />
             Tüm Hakları Saklıdır 

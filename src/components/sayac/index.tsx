@@ -71,7 +71,7 @@ export default function PercentageCircles() {
     <section className="bg-white py-20" ref={containerRef}>
       <div className="text-center mb-10">
         <p className="uppercase text-sm tracking-wide text-gray-600 font-semibold">
-          Etkimiz
+          Akr Ticaret Olarak Etkimiz
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
           Hizmetlerimizin Ardından Katılımcı Görüşleri

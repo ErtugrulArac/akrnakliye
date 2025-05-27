@@ -7,7 +7,7 @@ const ServicesSection = () => {
       icon: <FaMapMarkedAlt className="text-3xl text-blue-600 mb-4" />,
       title: 'Güvenli ve Hızlı Şehir İçi Taşımacılık',
       desc:
-        "Akar Nakliyat olarak şehir içi taşımacılıkta dakik ve güvenli hizmet sunuyoruz. Profesyonel ekibimiz ve özel araç filomuzla eşyalarınız zamanında ve sorunsuz şekilde taşınır.",
+        "Akr Ticaret olarak şehir içi taşımacılıkta dakik ve güvenli hizmet sunuyoruz. Profesyonel ekibimiz ve özel araç filomuzla eşyalarınız zamanında ve sorunsuz şekilde taşınır.",
     },
     {
       icon: <FaRobot className="text-3xl text-blue-600 mb-4" />,
@@ -26,11 +26,11 @@ const ServicesSection = () => {
   return (
     <section className="w-full px-4 py-16 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          AKAR Nakliyat <span className="text-blue-600">Hizmetleri</span>
-        </h2>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          AKR Ticaret <span className="text-blue-600">Hizmetleri</span>
+        </h1>
         <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
-          AKAR Nakliyat olarak, şehir içi ve şehirler arası taşımacılıkta güvenilir ve profesyonel çözümler sunuyoruz. Her aşamada müşteri memnuniyetini ön planda tutarak, eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
+          AKR ticaret olarak, şehir içi ve şehirler arası taşımacılıkta güvenilir ve profesyonel çözümler sunuyoruz. Her aşamada müşteri memnuniyetini ön planda tutarak, eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

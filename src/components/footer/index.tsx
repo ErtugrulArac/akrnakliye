@@ -11,7 +11,7 @@ const Footer = () => {
             <img src="akrlogosiyah.webp" alt="Arlan Medya" className="w-24 h-24 object-contain" />
           </div>
           <a
-            href="#"
+            href="/iletisim"
             className="bg-[#00a3e0] hover:bg-[#008cc7] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-medium"
           >
             <svg

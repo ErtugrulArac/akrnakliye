@@ -49,16 +49,16 @@ const FeaturesSection = () => {
     <section className="bg-white w-full py-16 px-4">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
         
-        {/* Tır Görseli */}
+       
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="akrnakliye.gif"
+            src="akrticaretgif.gif"
             alt="AKR Nakliyat Tır"
             className="w-[300px] md:w-[400px] object-contain"
           />
         </div>
 
-        {/* Özellikler */}
+        
         <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
           {features.map((item, idx) => (
             <div key={idx}>
