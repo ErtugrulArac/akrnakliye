@@ -54,7 +54,7 @@ export default function PercentageCircles() {
 
     const animation = setInterval(() => {
       frame++;
-      const updated = newProgress.map((val, i) =>
+      const updated = newProgress.map((_, i) =>
         frame <= data[i].percent ? frame : data[i].percent
       );
       setProgress(updated);
@@ -79,8 +79,10 @@ export default function PercentageCircles() {
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center gap-16 px-4 max-w-[1200px] mx-auto">
         {data.map((item, index) => {
-          const dashArray = 360;
-          const dashOffset = dashArray - (dashArray * progress[index]) / 100;
+          const radius = 80;
+          const circumference = 2 * Math.PI * radius;
+          const dashOffset = circumference - (circumference * progress[index]) / 100;
+
           return (
             <div className="text-center w-[200px]" key={index}>
               <svg width="200" height="200">
@@ -93,7 +95,7 @@ export default function PercentageCircles() {
                 <circle
                   cx="100"
                   cy="100"
-                  r="80"
+                  r={radius}
                   stroke="#e5e7eb"
                   strokeWidth="16"
                   fill="none"
@@ -101,11 +103,11 @@ export default function PercentageCircles() {
                 <circle
                   cx="100"
                   cy="100"
-                  r="80"
+                  r={radius}
                   stroke={`url(#grad-${index})`}
                   strokeWidth="16"
                   fill="none"
-                  strokeDasharray={dashArray}
+                  strokeDasharray={circumference}
                   strokeDashoffset={dashOffset}
                   transform="rotate(-90 100 100)"
                 />
