@@ -27,13 +27,13 @@ const Responsivelink = () => {
             </SheetClose>
 
             <SheetClose asChild>
-                <a target="_blank" rel="noopener noreferrer" title='Akr Ticaret' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/iletisim">
+                <a  title='Akr Ticaret' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/iletisim">
                     <FaPhoneSquareAlt size={30} /> İletişim
                 </a>
             </SheetClose>
 
             <SheetClose asChild>
-                <a target="_blank" rel="noopener noreferrer" title='Akr Ticaret Nakliye' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#sorular">
+                <a  title='Akr Ticaret Nakliye' className='flex items-center gap-6 text-lg font-medium opacity-90' href="/#sorular">
                     <FaBookReader size={30} /> Bilgi
                 </a>
             </SheetClose>

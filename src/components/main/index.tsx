@@ -36,9 +36,14 @@ const LogisticsHero = () => {
   }, []);
 
   useEffect(() => {
+    // Otomatik kaydırma  interval
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, 5000);
+
+    
+    setIndex(1);
+
     return () => clearInterval(interval);
   }, [images]);
 
