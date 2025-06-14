@@ -30,7 +30,7 @@ const LogisticsHero = () => {
       setImages(window.innerWidth < 768 ? mobileImages : desktopImages);
     };
 
-    handleResize();
+    handleResize(); // İlk yüklemede set et
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -44,6 +44,7 @@ const LogisticsHero = () => {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black">
+      {/* Arka Plan Görselleri */}
       {images.map((src, i) => {
         const isMobileGif1 = src === "/akrgif1mobile.gif";
 
@@ -64,18 +65,20 @@ const LogisticsHero = () => {
         );
       })}
 
-
+      {/* Koyu katman */}
       <div className="absolute inset-0 bg-black/40 z-20" />
 
-     
+      {/* İçerik */}
       <div className="relative z-30 h-full flex flex-col justify-center items-center px-6 sm:px-12 max-w-screen-xl mx-auto text-center gap-y-8">
         <h4 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-[700px] drop-shadow-md">
           <span className="block text-blue-800">Lojistikte Kolaylık,</span>
           <span className="block text-gray-200">Her Aşamada Yanınızdayız.</span>
         </h4>
+
         <p className="text-gray-100 text-lg sm:text-xl font-medium max-w-2xl">
           Güvenilir, hızlı ve profesyonel taşımacılık çözümleri ile her zaman yanınızdayız.
         </p>
+
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             href="/iletisim"
@@ -84,11 +87,10 @@ const LogisticsHero = () => {
           >
             Ücretsiz Teklif Al
           </Link>
+
           <Link
             href="/hakkimizda"
             title="Hakkımızda Sayfası"
-            target="_blank"
-            rel="noopener noreferrer"
             className="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-900 transition text-base sm:text-lg text-center"
           >
             Hakkımızda
