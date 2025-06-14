@@ -63,7 +63,7 @@ const FeaturesSection = () => {
           {features.map((item, idx) => (
             <div key={idx}>
               <div>{item.icon}</div>
-              <h3 className="mt-4 font-semibold text-lg">{item.title}</h3>
+              <h4 className="mt-4 font-semibold text-lg">{item.title}</h4>
               <p className="text-sm text-gray-600 mt-2">{item.text}</p>
             </div>
           ))}

@@ -69,10 +69,10 @@ const LogisticsHero = () => {
 
      
       <div className="relative z-30 h-full flex flex-col justify-center items-center px-6 sm:px-12 max-w-screen-xl mx-auto text-center gap-y-8">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-[700px] drop-shadow-md">
+        <h4 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-[700px] drop-shadow-md">
           <span className="block text-blue-800">Lojistikte Kolaylık,</span>
           <span className="block text-gray-200">Her Aşamada Yanınızdayız.</span>
-        </h1>
+        </h4>
         <p className="text-gray-100 text-lg sm:text-xl font-medium max-w-2xl">
           Güvenilir, hızlı ve profesyonel taşımacılık çözümleri ile her zaman yanınızdayız.
         </p>

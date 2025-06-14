@@ -8,10 +8,10 @@ const FleetSafetyBox = () => {
 
 
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-xl md:text-3xl lg:text-4xl font-semibold text-center md:text-left text-transparent bg-clip-text bg-gradient-to-r from-[#005388] to-[#00aaff] drop-shadow-sm mb-4">
+          <h4 className="text-xl md:text-3xl lg:text-4xl font-semibold text-center md:text-left text-transparent bg-clip-text bg-gradient-to-r from-[#005388] to-[#00aaff] drop-shadow-sm mb-4">
             Eşyalarınız Güvende, <br className="hidden md:block" />
             <span className="text-[#005388]">AKR Nakliyat Yanınızda</span>
-          </h1>
+          </h4>
 
           <p className="text-gray-700 text-sm md:text-base mb-6">
             Her taşıma süreci bizim için bir sorumluluk demektir. AKR Nakliyat olarak tüm araçlarımızı düzenli olarak kontrol eder, personelimizi titizlikle seçer ve eşyalarınızı en güvenli şekilde taşırız. Size sadece taşınmanın keyfini yaşamak kalır.

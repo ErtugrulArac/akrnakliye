@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Wp from "@/components/wp";
+import Head from "next/head"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
   description:
     "AKR Nakliyat, Türkiye genelinde hızlı ve güvenilir taşımacılık çözümleri sunar. Hemen teklif alın, yolculuğa güvenle çıkın!",
   metadataBase: new URL("https://akrnakliye.com"),
+  other: {
+    publisher: "AKR Nakliyat", 
+  },
   authors: [
     {
       name: "Ertuğrul Araç",
@@ -65,9 +69,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="tr">
+      <Head>
+        <meta name="publisher" content="AKR Nakliyat" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
