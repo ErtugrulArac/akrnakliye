@@ -6,7 +6,7 @@ const MovingServicesSection = () => {
     <section className="bg-white w-full py-16 px-4">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
 
-        {/* SOL: Başlık ve açıklama */}
+      
         <div className="md:w-1/2 text-left">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-tight">
             İstediğiniz Yerden Oraya <br />
@@ -23,13 +23,14 @@ const MovingServicesSection = () => {
 
           <a
             href="tel:05491750025"
+            target="_blank" rel="noopener noreferrer"
             className="bg-gradient-to-r from-blue-900 to-cyan-400 text-white px-6 py-2 rounded-md transition inline-block"
           >
             Hemen Bizi Arayın
           </a>
         </div>
 
-        {/* SAĞ: Görsel */}
+       
         <div className="md:w-1/2 flex justify-center">
           <img
             src="akarkamyonlar.webp"

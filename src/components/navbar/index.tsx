@@ -13,7 +13,7 @@ const index = () => {
                     <Link title="akar nakliye  Anasayfa" href="/">
                         <img
                             className="w-24 max-md:w-16"
-                            src="/akrlogobeyaz.webp" // başında "/" olmalı
+                            src="/akrlogobeyaz.webp"
                             alt="Akar Nakliye logo"
                         />
                     </Link>

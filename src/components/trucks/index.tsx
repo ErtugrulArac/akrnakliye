@@ -6,15 +6,18 @@ const FleetSafetyBox = () => {
     <div className="w-full px-4 py-16 flex justify-center bg-white">
       <div className="bg-white rounded-xl shadow-md px-6 py-8 md:px-10 md:py-10 max-w-5xl w-full flex flex-col md:flex-row items-center md:items-center gap-6">
 
-       
+
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">
-            Eşyalarınız Güvende, AKR Nakliyat Yanınızda
-          </h3>
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-semibold text-center md:text-left text-transparent bg-clip-text bg-gradient-to-r from-[#005388] to-[#00aaff] drop-shadow-sm mb-4">
+            Eşyalarınız Güvende, <br className="hidden md:block" />
+            <span className="text-[#005388]">AKR Nakliyat Yanınızda</span>
+          </h1>
+
           <p className="text-gray-700 text-sm md:text-base mb-6">
             Her taşıma süreci bizim için bir sorumluluk demektir. AKR Nakliyat olarak tüm araçlarımızı düzenli olarak kontrol eder, personelimizi titizlikle seçer ve eşyalarınızı en güvenli şekilde taşırız. Size sadece taşınmanın keyfini yaşamak kalır.
           </p>
           <Link
+          title="ücretsiz teklif aktticaret"
             href="/iletisim"
             className="bg-[#0066a1] hover:bg-[#005388] text-white font-medium text-sm md:text-base px-6 py-2.5 rounded transition inline-block"
           >
@@ -22,7 +25,8 @@ const FleetSafetyBox = () => {
           </Link>
         </div>
 
-       
+
+
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img
             src="truckk.webp"

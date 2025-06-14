@@ -26,9 +26,9 @@ const ServicesSection = () => {
   return (
     <section className="w-full px-4 py-16 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        <h3 className="text-3xl md:text-4xl font-bold mb-4">
           AKR Ticaret <span className="text-blue-600">Hizmetleri</span>
-        </h1>
+        </h3>
         <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
           AKR ticaret olarak, şehir içi ve şehirler arası taşımacılıkta güvenilir ve profesyonel çözümler sunuyoruz. Her aşamada müşteri memnuniyetini ön planda tutarak, eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
         </p>

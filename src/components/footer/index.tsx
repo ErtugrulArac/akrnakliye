@@ -11,6 +11,7 @@ const Footer = () => {
             <img src="akrlogosiyah.webp" alt="Arlan Medya" className="w-24 h-24 object-contain" />
           </div>
           <a
+          target="_blank"  rel="noopener noreferrer"
             href="/iletisim"
             className="bg-[#00a3e0] hover:bg-[#008cc7] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-medium"
           >
@@ -42,24 +43,24 @@ const Footer = () => {
           </p>
           <div className="flex flex-col md:flex-row items-center gap-4 text-base">
             <div className="flex gap-6">
-              <a href="/hakkimizda" className="hover:underline font-bold">
+              <a title="hakkımızda" href="/hakkimizda" target="_blank" rel="noopener noreferrer" className="hover:underline font-bold">
                 Hakkımızda
               </a>
-              <a href="/iletisim" className="hover:underline font-bold">
+              <a title="iletişim" href="/iletisim" target="_blank" rel="noopener noreferrer" className="hover:underline font-bold">
                 İletişim
               </a>
             </div>
             <div className="flex items-center gap-4 text-xl mt-2 md:mt-0">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a title="LinkedinIn" href="#"  target="_blank" rel="noopener noreferrer">
                 <FaLinkedinIn />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a title="Instagram" href="#" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a title="facebook" href="#" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a title="youtube" href="#" target="_blank" rel="noopener noreferrer">
                 <FaYoutube />
               </a>
             </div>

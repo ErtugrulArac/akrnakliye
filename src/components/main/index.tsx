@@ -68,21 +68,21 @@ const LogisticsHero = () => {
 
       {/* İçerik */}
       <div className="relative z-30 h-full flex flex-col justify-center items-center px-6 sm:px-12 max-w-screen-xl mx-auto text-center gap-y-8">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight max-w-[700px] drop-shadow-md">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight max-w-[700px] drop-shadow-md">
           <span className="block text-blue-800">Lojistikte Kolaylık,</span>
           <span className="block text-gray-200">Her Aşamada Yanınızdayız.</span>
-        </h1>
+        </h2>
         <p className="text-gray-100 text-lg sm:text-xl font-medium max-w-2xl">
           Güvenilir, hızlı ve profesyonel taşımacılık çözümleri ile her zaman yanınızdayız.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Link href="/iletisim" passHref legacyBehavior>
-            <a className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-100 transition text-base sm:text-lg text-center">
+          <Link title="iletişim yönlendirme" href="/iletisim" passHref legacyBehavior>
+            <a target="_blank" rel="noopener noreferrer" className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-100 transition text-base sm:text-lg text-center">
               Ücretsiz Teklif Al
             </a>
           </Link>
-          <Link href="/hakkimizda" passHref legacyBehavior>
-            <a className="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-900 transition text-base sm:text-lg text-center">
+          <Link title="hakkımdayönlendirme" href="/hakkimizda" passHref legacyBehavior>
+            <a target="_blank" rel="noopener noreferrer" className="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-900 transition text-base sm:text-lg text-center">
               Hakkımızda
             </a>
           </Link>

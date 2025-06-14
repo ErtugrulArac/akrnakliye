@@ -20,6 +20,18 @@ export const metadata: Metadata = {
   description:
     "AKR Nakliyat, Türkiye genelinde hızlı ve güvenilir taşımacılık çözümleri sunar. Hemen teklif alın, yolculuğa güvenle çıkın!",
   metadataBase: new URL("https://akrnakliye.com"),
+  authors: [
+    {
+      name: "Ertuğrul Araç",
+      url: "https://github.com/ErtugrulArac",
+    },
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    noimageindex: false,
+  },
   openGraph: {
     title: "AKR Nakliyat | Lojistik Çözümler",
     description:
@@ -50,9 +62,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+
   return (
     <html lang="tr">
       <body
