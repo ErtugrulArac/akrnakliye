@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -50,7 +51,7 @@ const LogisticsHero = () => {
           <img
             key={src}
             src={src}
-            alt={`bg-${i}`}
+            alt={`Arka plan görseli ${i + 1}`}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               index === i ? "opacity-100 z-10" : "opacity-0 z-0"
             } ${
@@ -63,28 +64,34 @@ const LogisticsHero = () => {
         );
       })}
 
-      {/* Overlay */}
+
       <div className="absolute inset-0 bg-black/40 z-20" />
 
-      {/* İçerik */}
+     
       <div className="relative z-30 h-full flex flex-col justify-center items-center px-6 sm:px-12 max-w-screen-xl mx-auto text-center gap-y-8">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight max-w-[700px] drop-shadow-md">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight max-w-[700px] drop-shadow-md">
           <span className="block text-blue-800">Lojistikte Kolaylık,</span>
           <span className="block text-gray-200">Her Aşamada Yanınızdayız.</span>
-        </h2>
+        </h1>
         <p className="text-gray-100 text-lg sm:text-xl font-medium max-w-2xl">
           Güvenilir, hızlı ve profesyonel taşımacılık çözümleri ile her zaman yanınızdayız.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Link title="iletişim yönlendirme" href="/iletisim" passHref legacyBehavior>
-            <a target="_blank" rel="noopener noreferrer" className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-100 transition text-base sm:text-lg text-center">
-              Ücretsiz Teklif Al
-            </a>
+          <Link
+            href="/iletisim"
+            title="İletişim Sayfasına Git"
+            className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-100 transition text-base sm:text-lg text-center"
+          >
+            Ücretsiz Teklif Al
           </Link>
-          <Link title="hakkımdayönlendirme" href="/hakkimizda" passHref legacyBehavior>
-            <a target="_blank" rel="noopener noreferrer" className="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-900 transition text-base sm:text-lg text-center">
-              Hakkımızda
-            </a>
+          <Link
+            href="/hakkimizda"
+            title="Hakkımızda Sayfası"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-900 transition text-base sm:text-lg text-center"
+          >
+            Hakkımızda
           </Link>
         </div>
       </div>
