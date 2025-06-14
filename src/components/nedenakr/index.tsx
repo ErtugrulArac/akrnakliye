@@ -3,6 +3,7 @@
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -101,17 +102,27 @@ export default function TestimonialsCarousel() {
   );
 
   return (
-    <section className="bg-white py-20 px-4">
+    <motion.section
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-white py-20 px-4"
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
           Müşterilerimiz Ne Diyor?
         </h2>
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-4 sm:gap-6">
-            {testimonials.map((item) => (
-              <div
+            {testimonials.map((item, index) => (
+              <motion.div
                 key={item.id}
                 className="min-w-[280px] sm:min-w-[320px] max-w-xs p-4 sm:p-6 border rounded-lg shadow hover:shadow-md transition-all duration-300 flex-shrink-0"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <img
@@ -128,11 +139,11 @@ export default function TestimonialsCarousel() {
                 <p className="text-gray-700 text-sm mb-4">"{item.text}"</p>
                 <p className="text-blue-600 font-medium text-sm">{item.name}</p>
                 <p className="text-xs text-gray-500">{item.title}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

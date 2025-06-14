@@ -1,5 +1,7 @@
 'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const features = [
   {
@@ -46,30 +48,47 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="bg-white w-full py-16 px-4">
+    <motion.section
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-white w-full py-16 px-4"
+    >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        
-       
-        <div className="w-full md:w-1/2 flex justify-center">
+        {/* Görsel */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true }}
+          className="w-full md:w-1/2 flex justify-center"
+        >
           <img
             src="akrticaretgif.gif"
             alt="AKR Nakliyat Tır"
             className="w-[300px] md:w-[400px] object-contain"
           />
-        </div>
+        </motion.div>
 
-        
+        {/* Özellikler */}
         <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
           {features.map((item, idx) => (
-            <div key={idx}>
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              viewport={{ once: true }}
+            >
               <div>{item.icon}</div>
               <h4 className="mt-4 font-semibold text-lg">{item.title}</h4>
               <p className="text-sm text-gray-600 mt-2">{item.text}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

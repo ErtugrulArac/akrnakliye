@@ -1,6 +1,8 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "framer-motion";
 
 const data = [
   {
@@ -20,34 +22,11 @@ const data = [
 export default function PercentageCircles() {
   const [progress, setProgress] = useState(data.map(() => 0));
   const containerRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const inView = useInView(containerRef, { once: true, amount: 0.4 });
+  const controls = useAnimation();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-          setProgress(data.map(() => 0)); // Reset when not visible
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
+    if (!inView) return;
 
     let frame = 0;
     const newProgress = [...data.map(() => 0)];
@@ -65,10 +44,16 @@ export default function PercentageCircles() {
     }, 20);
 
     return () => clearInterval(animation);
-  }, [isVisible]);
+  }, [inView]);
 
   return (
-    <section className="bg-white py-20" ref={containerRef}>
+    <motion.section
+      ref={containerRef}
+      initial={{ opacity: 0, y: 80 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="bg-white py-20"
+    >
       <div className="text-center mb-10">
         <p className="uppercase text-sm tracking-wide text-gray-600 font-semibold">
           Akr Ticaret Olarak Etkimiz
@@ -77,6 +62,7 @@ export default function PercentageCircles() {
           Hizmetlerimizin Ardından Katılımcı Görüşleri
         </h2>
       </div>
+
       <div className="flex flex-col lg:flex-row justify-center items-center gap-16 px-4 max-w-[1200px] mx-auto">
         {data.map((item, index) => {
           const radius = 80;
@@ -84,7 +70,14 @@ export default function PercentageCircles() {
           const dashOffset = circumference - (circumference * progress[index]) / 100;
 
           return (
-            <div className="text-center w-[200px]" key={index}>
+            <motion.div
+              key={index}
+              className="text-center w-[200px]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <svg width="200" height="200">
                 <defs>
                   <linearGradient id={`grad-${index}`} x1="1" y1="0" x2="0" y2="1">
@@ -123,10 +116,10 @@ export default function PercentageCircles() {
               <div className="text-sm text-gray-600 mt-4 leading-snug max-w-[250px] mx-auto">
                 {item.label}
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 }

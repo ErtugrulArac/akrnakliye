@@ -2,11 +2,18 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-t from-[#c0e3f5] to-white text-sm text-gray-600 pt-14 pb-10">
+    <motion.footer
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="w-full bg-gradient-to-t from-[#c0e3f5] to-white text-sm text-gray-600 pt-14 pb-10"
+    >
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-8">
 
         {/* Logo ve Bilgi Butonu */}
@@ -74,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

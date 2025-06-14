@@ -1,21 +1,41 @@
-
 'use client'
 
-import { FaUserAlt, FaEnvelope, FaCommentDots, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
+import {
+  FaUserAlt,
+  FaEnvelope,
+  FaCommentDots,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaClock,
+} from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import React from 'react'
 
 export default function IletisimPage() {
   return (
     <section className="bg-white py-32 px-4">
       <div className="max-w-6xl mx-auto">
         {/* BAŞLIK */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl font-bold text-gray-800 mb-2">Bizimle İletişime Geçin</h2>
-          <p className="text-gray-600 text-lg">Sorularınız, önerileriniz veya işbirlikleriniz için aşağıdaki formu doldurabilirsiniz.</p>
-        </div>
+          <p className="text-gray-600 text-lg">
+            Sorularınız, önerileriniz veya işbirlikleriniz için aşağıdaki formu doldurabilirsiniz.
+          </p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* FORM */}
-          <form
+          <motion.form
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             action="https://formspree.io/f/xovdoywj"
             method="POST"
             className="space-y-6 bg-gray-50 p-8 rounded-xl shadow-lg"
@@ -64,10 +84,16 @@ export default function IletisimPage() {
             >
               Gönder
             </button>
-          </form>
+          </motion.form>
 
           {/* BİLGİ KUTULARI */}
-          <div className="flex flex-col gap-6 justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-6 justify-center"
+          >
             <div className="flex items-start gap-4">
               <FaPhoneAlt className="text-yellow-500 text-2xl mt-1" />
               <div>
@@ -91,7 +117,7 @@ export default function IletisimPage() {
                 <p className="text-gray-600">Hafta içi 09:00 - 18:00</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

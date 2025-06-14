@@ -15,6 +15,7 @@ const index = () => {
                             className="w-24 max-md:w-16"
                             src="/akrlogobeyaz.webp"
                             alt="Akar Nakliye logo"
+                            title='anasayfa'
                         />
                     </Link>
 
