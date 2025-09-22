@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { FaMapMarkedAlt, FaRobot, FaChartBar } from "react-icons/fa";
 
 const ServicesSection = () => {
@@ -28,13 +27,7 @@ const ServicesSection = () => {
 
   return (
     <section className="w-full px-4 py-16 bg-white">
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="max-w-6xl mx-auto text-center"
-      >
+      <div className="max-w-6xl mx-auto text-center">
         <h3 className="text-3xl md:text-4xl font-bold mb-4">
           AKR Ticaret <span className="text-blue-600">Hizmetleri</span>
         </h3>
@@ -46,12 +39,8 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.5 }}
-              viewport={{ once: true, amount: 0.2 }}
               className="border rounded-xl p-6 bg-white shadow-sm hover:shadow-lg transition-transform duration-300 transform hover:scale-105"
             >
               {service.icon}
@@ -59,10 +48,10 @@ const ServicesSection = () => {
                 {service.title}
               </h3>
               <p className="text-gray-600 text-sm">{service.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

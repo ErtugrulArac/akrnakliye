@@ -1,59 +1,66 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "framer-motion";
 
 const data = [
   {
     percent: 87,
-    label: "Kullanıcıların %87'si hizmet sonrası kişisel yaşamlarının iyileştiğini bildiriyor.",
+    label:
+      "Kullanıcıların %87'si hizmet sonrası kişisel yaşamlarının iyileştiğini bildiriyor.",
   },
   {
     percent: 77,
-    label: "Katılımcıların %77’si AKR sayesinde iş yerinde daha üretken olduklarını bildiriyor.",
+    label:
+      "Katılımcıların %77’si AKR sayesinde iş yerinde daha üretken olduklarını bildiriyor.",
   },
   {
     percent: 90,
-    label: "AKR çözümleriyle açılan vakaların %90'ı başarıyla sonuçlanmıştır.",
+    label:
+      "AKR çözümleriyle açılan vakaların %90'ı başarıyla sonuçlanmıştır.",
   },
 ];
 
 export default function PercentageCircles() {
-  const [progress, setProgress] = useState(data.map(() => 0));
-  const containerRef = useRef(null);
-  const inView = useInView(containerRef, { once: true, amount: 0.4 });
-  const controls = useAnimation();
+  const [progress, setProgress] = useState<number[]>(data.map(() => 0));
+  const containerRef = useRef<HTMLElement | null>(null);
+  const [inView, setInView] = useState(false);
 
+  // Görünür olduğunda sayacı başlatmak için basit observer
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  // Yüzde artışı (görünür olunca)
   useEffect(() => {
     if (!inView) return;
 
     let frame = 0;
-    const newProgress = [...data.map(() => 0)];
-
-    const animation = setInterval(() => {
+    const targetMax = Math.max(...data.map((d) => d.percent));
+    const timer = setInterval(() => {
       frame++;
-      const updated = newProgress.map((_, i) =>
-        frame <= data[i].percent ? frame : data[i].percent
-      );
-      setProgress(updated);
-
-      if (frame >= Math.max(...data.map((d) => d.percent))) {
-        clearInterval(animation);
-      }
+      setProgress(data.map((d) => Math.min(frame, d.percent)));
+      if (frame >= targetMax) clearInterval(timer);
     }, 20);
 
-    return () => clearInterval(animation);
+    return () => clearInterval(timer);
   }, [inView]);
 
   return (
-    <motion.section
-      ref={containerRef}
-      initial={{ opacity: 0, y: 80 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className="bg-white py-20"
-    >
+    <section ref={containerRef} className="bg-white py-20">
       <div className="text-center mb-10">
         <p className="uppercase text-sm tracking-wide text-gray-600 font-semibold">
           Akr Ticaret Olarak Etkimiz
@@ -67,17 +74,11 @@ export default function PercentageCircles() {
         {data.map((item, index) => {
           const radius = 80;
           const circumference = 2 * Math.PI * radius;
-          const dashOffset = circumference - (circumference * progress[index]) / 100;
+          const dashOffset =
+            circumference - (circumference * progress[index]) / 100;
 
           return (
-            <motion.div
-              key={index}
-              className="text-center w-[200px]"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
+            <div key={index} className="text-center w-[200px]">
               <svg width="200" height="200">
                 <defs>
                   <linearGradient id={`grad-${index}`} x1="1" y1="0" x2="0" y2="1">
@@ -116,10 +117,10 @@ export default function PercentageCircles() {
               <div className="text-sm text-gray-600 mt-4 leading-snug max-w-[250px] mx-auto">
                 {item.label}
               </div>
-            </motion.div>
+            </div>
           );
         })}
       </div>
-    </motion.section>
+    </section>
   );
 }

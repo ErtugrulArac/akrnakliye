@@ -13,21 +13,23 @@ import Sorular from "@/components/sorular"
 import Yan from "@/components/yanyana"
 
 
+
+
 export default function Home() {
   return (
     <div >
-      
-      <Main/>
-      <Text/>
-      <Truck/>
-      <Sayac/>
-      <Trucks/>
-      <Acıklama/>
-      <Hizmet/>
-      <Referanslar/>
-      <Sorular/>
-      <Yan/>
-      <Nedenakr/>
+
+      <Main />
+      <Text />
+      <Truck />
+      <Sayac />
+      <Trucks />
+      <Acıklama />
+      <Hizmet />
+      <Referanslar />
+      <Sorular />
+      <Yan />
+      <Nedenakr />
     </div>
   );
 }
