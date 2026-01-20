@@ -60,7 +60,7 @@ export default function TestimonialsCarousel() {
                 className="min-w-[300px] sm:min-w-[340px] max-w-xs flex-shrink-0 bg-white border-2 border-slate-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:border-cyan-300 transition-all duration-300 group"
               >
                 <div className="mb-5 flex items-center gap-4">
-                  <div className="relative w-14 h-14 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center p-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center p-2 group-hover:scale-110 transition-transform duration-300">
                     <img
                       src={item.logo}
                       alt={item.company}

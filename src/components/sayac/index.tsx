@@ -22,7 +22,7 @@ const data = [
 
 export default function PercentageCircles() {
   const [progress, setProgress] = useState<number[]>(data.map(() => 0));
-  const containerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [inView, setInView] = useState(false);
 
   // Görünür olduğunda sayacı başlatmak için basit observer
@@ -60,8 +60,8 @@ export default function PercentageCircles() {
   }, [inView]);
 
   return (
-    <section ref={containerRef} className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
-      <div className="text-center mb-16 px-4">
+    <section className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
+      <div ref={containerRef} className="text-center mb-16 px-4">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full px-6 py-2 mb-4">
           <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
