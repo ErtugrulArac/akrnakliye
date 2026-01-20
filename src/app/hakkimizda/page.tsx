@@ -281,28 +281,28 @@ export default function Hakkimizda() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
-              <a href="/iletisim" className="group">
+            <div className="flex flex-col gap-3 sm:gap-4 justify-center items-center pt-4">
+              <a href="/iletisim" className="group w-full max-w-xs sm:max-w-sm">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative px-12 py-5 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 overflow-hidden transition-all duration-300 group-hover:gap-5"
+                  className="relative w-full px-8 sm:px-10 py-4 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white font-semibold text-sm sm:text-base rounded-xl shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 overflow-hidden transition-all duration-300 group-hover:gap-4"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10">İletişime Geç</span>
-                  <ArrowRight className="relative z-10 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="relative z-10 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.button>
               </a>
               
-              <a href="tel:05491750025" className="group">
+              <a href="tel:05491750025" className="group w-full max-w-xs sm:max-w-sm">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative px-12 py-5 bg-white border-2 border-slate-300 text-slate-900 font-bold text-lg rounded-2xl hover:border-cyan-500 hover:bg-gradient-to-r hover:from-cyan-50 hover:to-blue-50 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="relative w-full px-8 sm:px-10 py-4 bg-white border-2 border-slate-300 text-slate-900 font-semibold text-sm sm:text-base rounded-xl hover:border-cyan-500 hover:bg-gradient-to-r hover:from-cyan-50 hover:to-blue-50 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   <span className="flex items-center justify-center gap-3">
-                    <span className="text-2xl">📞</span>
-                    <span>0549 175 0025</span>
+                    <span className="text-xl sm:text-2xl">📞</span>
+                    <span className="text-sm sm:text-base">0549 175 0025</span>
                   </span>
                 </motion.button>
               </a>
