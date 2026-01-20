@@ -60,14 +60,20 @@ export default function PercentageCircles() {
   }, [inView]);
 
   return (
-    <section ref={containerRef} className="bg-white py-20">
-      <div className="text-center mb-10">
-        <p className="uppercase text-sm tracking-wide text-gray-600 font-semibold">
-          Akr Ticaret Olarak Etkimiz
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
-          Hizmetlerimizin Ardından Katılımcı Görüşleri
+    <section ref={containerRef} className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
+      <div className="text-center mb-16 px-4">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-full px-6 py-2 mb-4">
+          <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+          </svg>
+          <span className="text-sm font-bold text-blue-900">İSTATİSTİKLER</span>
+        </div>
+        <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mt-2 mb-4">
+          Akr Ticaret Olarak <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Etkimiz</span>
         </h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          Hizmetlerimizin Ardından Katılımcı Görüşleri
+        </p>
       </div>
 
       <div className="flex flex-col lg:flex-row justify-center items-center gap-16 px-4 max-w-[1200px] mx-auto">
@@ -78,44 +84,51 @@ export default function PercentageCircles() {
             circumference - (circumference * progress[index]) / 100;
 
           return (
-            <div key={index} className="text-center w-[200px]">
-              <svg width="200" height="200">
-                <defs>
-                  <linearGradient id={`grad-${index}`} x1="1" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#1e3a8a" />
-                    <stop offset="100%" stopColor="#60a5fa" />
-                  </linearGradient>
-                </defs>
-                <circle
-                  cx="100"
-                  cy="100"
-                  r={radius}
-                  stroke="#e5e7eb"
-                  strokeWidth="16"
-                  fill="none"
-                />
-                <circle
-                  cx="100"
-                  cy="100"
-                  r={radius}
-                  stroke={`url(#grad-${index})`}
-                  strokeWidth="16"
-                  fill="none"
-                  strokeDasharray={circumference}
-                  strokeDashoffset={dashOffset}
-                  transform="rotate(-90 100 100)"
-                />
-                <text
-                  x="100"
-                  y="110"
-                  textAnchor="middle"
-                  className="font-bold text-2xl fill-black"
-                >
-                  {progress[index]}%
-                </text>
-              </svg>
-              <div className="text-sm text-gray-600 mt-4 leading-snug max-w-[250px] mx-auto">
-                {item.label}
+            <div key={index} className="text-center w-[220px] group">
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+                <svg width="200" height="200" className="mx-auto">
+                  <defs>
+                    <linearGradient id={`grad-${index}`} x1="1" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#0ea5e9" />
+                      <stop offset="100%" stopColor="#06b6d4" />
+                    </linearGradient>
+                  </defs>
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r={radius}
+                    stroke="#e2e8f0"
+                    strokeWidth="18"
+                    fill="none"
+                  />
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r={radius}
+                    stroke={`url(#grad-${index})`}
+                    strokeWidth="18"
+                    fill="none"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={dashOffset}
+                    strokeLinecap="round"
+                    transform="rotate(-90 100 100)"
+                    className="drop-shadow-lg"
+                  />
+                  <text
+                    x="100"
+                    y="110"
+                    textAnchor="middle"
+                    className="font-black text-4xl fill-slate-900"
+                  >
+                    {progress[index]}%
+                  </text>
+                </svg>
+              </div>
+              <div className="bg-white border-2 border-slate-200 group-hover:border-cyan-300 rounded-2xl p-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                  {item.label}
+                </p>
               </div>
             </div>
           );

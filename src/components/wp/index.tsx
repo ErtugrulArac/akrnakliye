@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function FloatingContactButtons() {
-  const [showTooltip, setShowTooltip] = useState(true);
   const phone = "05491750025";
 
   const handleConversion = (url: string) => {
@@ -22,36 +21,34 @@ export default function FloatingContactButtons() {
   
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
-      {showTooltip && (
-        <div className="bg-white text-black text-sm px-4 py-2 rounded-md shadow-md flex items-center gap-2">
-          <span>Bize mesaj gönderin</span>
-          <button
-            onClick={() => setShowTooltip(false)}
-            className="ml-2 text-gray-500 hover:text-red-500 text-xs"
-          >
-            ✕
-          </button>
-        </div>
-      )}
+    <div className="fixed bottom-5 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end space-y-2">
+      {/* WhatsApp Button */}
+      <div className="relative group">
+        <button
+          onClick={() => handleConversion(`https://wa.me/90${phone}`)}
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center border border-white/20 hover:-translate-y-0.5"
+          aria-label="WhatsApp ile mesaj gönder"
+        >
+          <FaWhatsapp className="text-xl sm:text-2xl" />
+        </button>
+        <span className="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-900 text-white text-xs sm:text-sm font-medium px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+          WhatsApp ile yazın
+        </span>
+      </div>
 
-      {/* {/ WhatsApp Button /} */}
-      <button
-        onClick={() => handleConversion(`https://wa.me/90${phone}`)}
-        className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center"
-        aria-label="WhatsApp ile mesaj gönder"
-      >
-        <FaWhatsapp className="text-xl" />
-      </button>
-
-      {/* {/ Phone Button /} */}
-      <button
-        onClick={() => handleConversion(`tel:${phone}`)}
-        className="bg-[#009eff] hover:bg-[#009eff] text-white p-4 rounded-full shadow-lg flex items-center justify-center"
-        aria-label="Telefonla ara"
-      >
-        <FaPhoneAlt className="text-xl" />
-      </button>
+      {/* Phone Button */}
+      <div className="relative group">
+        <button
+          onClick={() => handleConversion(`tel:${phone}`)}
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center border border-white/20 hover:-translate-y-0.5"
+          aria-label="Telefonla ara"
+        >
+          <FaPhoneAlt className="text-lg sm:text-xl" />
+        </button>
+        <span className="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-900 text-white text-xs sm:text-sm font-medium px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+          Hemen ara
+        </span>
+      </div>
     </div>
   );
 }

@@ -53,39 +53,61 @@ const FeaturesSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.3 }}
-      className="bg-white w-full py-16 px-4"
+      className="bg-gradient-to-b from-white via-slate-50 to-white w-full py-20 px-4"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        {/* Görsel */}
+      <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="w-full md:w-1/2 flex justify-center"
+          className="text-center mb-16"
         >
-          <img
-            src="akrticaretgif.gif"
-            alt="AKR Nakliyat Tır"
-            className="w-[300px] md:w-[400px] object-contain"
-          />
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-full px-6 py-2 mb-4">
+            <div className="w-2 h-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full animate-pulse" />
+            <span className="text-sm font-bold text-cyan-900">ÖZELLİKLERİMİZ</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">Neden AKR Lojistik?</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">Profesyonel ekibimiz ve modern araç filomuzla güvenilir hizmet sunuyoruz</p>
         </motion.div>
 
-        {/* Özellikler */}
-        <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
-          {features.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.15 }}
-              viewport={{ once: true }}
-            >
-              <div>{item.icon}</div>
-              <h4 className="mt-4 font-semibold text-lg">{item.title}</h4>
-              <p className="text-sm text-gray-600 mt-2">{item.text}</p>
-            </motion.div>
-          ))}
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          {/* Görsel */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 flex justify-center"
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-200 to-blue-200 rounded-3xl blur-2xl opacity-20" />
+              <img
+                src="akrticaretgif.gif"
+                alt="AKR Nakliyat Tır"
+                className="relative w-[300px] md:w-[400px] object-contain"
+              />
+            </div>
+          </motion.div>
+
+          {/* Özellikler */}
+          <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {features.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                className="bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-cyan-300 transition-all duration-300 group"
+              >
+                <div className="mb-3 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                <h4 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>
