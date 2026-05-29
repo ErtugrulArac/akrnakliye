@@ -2,6 +2,52 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+
+function FloatingPaths({ position }: { position: number }) {
+  const paths = Array.from({ length: 36 }, (_, i) => ({
+    id: i,
+    d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
+      380 - i * 5 * position
+    } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
+      152 - i * 5 * position
+    } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
+      684 - i * 5 * position
+    } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
+    width: 0.5 + i * 0.03,
+  }));
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      <svg
+        className="w-full h-full"
+        viewBox="0 0 696 316"
+        fill="none"
+      >
+        {paths.map((path) => (
+          <motion.path
+            key={path.id}
+            d={path.d}
+            stroke="white"
+            strokeWidth={path.width}
+            strokeOpacity={0.06 + path.id * 0.012}
+            initial={{ pathLength: 0.3, opacity: 0.4 }}
+            animate={{
+              pathLength: 1,
+              opacity: [0.2, 0.5, 0.2],
+              pathOffset: [0, 1, 0],
+            }}
+            transition={{
+              duration: 20 + (path.id % 5) * 4,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+}
 
 const LogisticsHero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -83,7 +129,7 @@ const LogisticsHero = () => {
           background-size: 400% 400%;
           animation: gradientShift 16s ease infinite;
           position: relative;
-          overflow: hidden;
+          overflow: clip;
         }
 
         .gradient-bg::before {
@@ -116,6 +162,7 @@ const LogisticsHero = () => {
           filter: blur(50px);
           opacity: 0.5;
           animation: float 10s ease-in-out infinite;
+          pointer-events: none;
         }
 
         .orb-1 {
@@ -271,20 +318,25 @@ const LogisticsHero = () => {
         }
       `}</style>
 
-      <section 
-        className="relative w-full min-h-screen overflow-hidden gradient-bg pt-28 sm:pt-32 md:pt-36 pb-16 sm:pb-20 md:pb-24"
+      <section
+        className="relative w-full min-h-screen overflow-clip gradient-bg pt-28 sm:pt-32 md:pt-36 pb-16 sm:pb-20 md:pb-24 flex flex-col items-center justify-center"
         style={{
           "--mouse-x": `${(mousePosition.x + 1) * 50}%`,
           "--mouse-y": `${(mousePosition.y + 1) * 50}%`,
+          touchAction: "pan-y",
         } as React.CSSProperties}
       >
+        {/* Floating Paths Animation */}
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+
         {/* Decorative Orbs */}
         <div className="decorative-orb orb-1" />
         <div className="decorative-orb orb-2" />
         <div className="decorative-orb orb-3" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-12">
+        <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12">
           <div className="max-w-5xl w-full text-center space-y-10">
             {/* Premium Badge */}
             <div className={`inline-flex items-center gap-3 mx-auto ${isLoaded ? "animate-fade-scale" : "opacity-0"}`}>
